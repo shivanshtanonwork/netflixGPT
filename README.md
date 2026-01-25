@@ -3,8 +3,11 @@
 - npm create vite@latest
 - Configured TailwindCSS
 - Header
+- Routing of App
 - Login Form
 - Sign up form
+- Form Validation
+- useRef hook
 
 # Features
 
