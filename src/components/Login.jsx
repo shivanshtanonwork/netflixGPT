@@ -4,6 +4,8 @@ import { checkValidData } from "../utils/validate";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null);
+
   const email = useRef(null);
   const password = useRef(null);
   const toggleSignInForm = () => {
@@ -14,7 +16,8 @@ const Login = () => {
     console.log(email.current.value);
     console.log(password.current.value);
     const message = checkValidData(email.current.value, password.current.value);
-    console.log(message);
+    // console.log(message);
+    setErrorMessage(message);
   };
   return (
     <div>
@@ -51,6 +54,7 @@ const Login = () => {
           placeholder="Password"
           className="p-4 my-3 w-full bg-zinc-800 rounded-md focus:outline-none focus:ring-1 focus:ring-white "
         />
+        <p className="text-red-500 text-lg py-2 font-bold">{errorMessage}</p>
         <button
           className="p-4 my-6 bg-red-600 hover:bg-red-700 w-full rounded-md font-semibold "
           onClick={handleButtonClick}
